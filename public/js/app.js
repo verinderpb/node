@@ -11,7 +11,7 @@ weatherForm.addEventListener('submit', (e)=>{
     e.preventDefault();
     suburb = search.value
     message1.textContent = "Loading..."
-    fetch("http://localhost:3000/weather?address=" + suburb).then((response)=>{
+    fetch("/weather?address=" + suburb).then((response)=>{
         response.json().then((data)=>{
             if (data.error) {
                 console.log(data.error)
